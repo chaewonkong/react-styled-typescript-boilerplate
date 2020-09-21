@@ -1,0 +1,19 @@
+{
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+    "lodash",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ],
+  "presets": [
+    "@babel/env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ]
+}

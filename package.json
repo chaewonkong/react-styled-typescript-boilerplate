@@ -1,0 +1,62 @@
+{
+  "name": "rollingpaper_web",
+  "version": "1.0.0",
+  "description": "A web project for rollingpaper",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --mode=production",
+    "lint": "eslint src --ext ts --ext tsx",
+    "lint:fix": "eslint src --ext ts --ext tsx --fix",
+    "start": "webpack --mode=development && webpack-dev-server"
+  },
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "author": "ChaeWonKong",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.14",
+    "@types/lodash": "^4.14.161",
+    "axios": "^0.20.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "compression-webpack-plugin": "^6.0.2",
+    "eslint": "^7.9.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "html-webpack-plugin": "^4.4.1",
+    "html-webpack-pug-plugin": "^2.0.0",
+    "lodash": "^4.17.20",
+    "pug": "^3.0.0",
+    "pug-loader": "^2.4.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "ts-jest": "^26.4.0",
+    "typescript": "^4.0.3",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^3.9.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
