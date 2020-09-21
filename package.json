@@ -4,7 +4,7 @@
   "description": "A web project for rollingpaper",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "build": "webpack --mode=production",
     "lint": "eslint src --ext ts --ext tsx",
     "lint:fix": "eslint src --ext ts --ext tsx --fix",
@@ -39,6 +39,7 @@
     "eslint-plugin-simple-import-sort": "5.0.3",
     "html-webpack-plugin": "4.4.1",
     "html-webpack-pug-plugin": "2.0.0",
+    "jest": "26.4.2",
     "lodash": "4.17.20",
     "pug": "3.0.0",
     "pug-loader": "2.4.0",
