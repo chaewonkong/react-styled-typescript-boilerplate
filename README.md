@@ -1,6 +1,5 @@
-# rollingpaper-web
-https://rollingpaper.site
-A web project for rollingpaper.
+# react-styled-typescript-boilerplate
+A React boilerplate for styled-components and TypeScript.
 
 ## Installation
 ```
