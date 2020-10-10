@@ -1,7 +1,7 @@
 {
-  "name": "rollingpaper_web",
+  "name": "react-styled-typescript-boilerplates",
   "version": "1.0.0",
-  "description": "A web project for rollingpaper",
+  "description": "A React boilerplate for styled-component and TypeScript",
   "main": "index.js",
   "scripts": {
     "test": "jest --passWithNoTests",
