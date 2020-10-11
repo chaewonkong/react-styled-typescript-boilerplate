@@ -20,7 +20,8 @@
       ]
     },
     "types": [
-      "@types/jest"
+      "@types/jest",
+      "@types/node"
     ]
   }
 }

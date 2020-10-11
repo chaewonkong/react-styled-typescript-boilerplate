@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-  plugins: ['simple-import-sort', 'import'],
+  plugins: ['simple-import-sort', 'import', '@typescript-eslint'],
   extends: [
     // Uses the recommended rules from @typescript-eslint/eslint-plugin
     'plugin:@typescript-eslint/recommended',
