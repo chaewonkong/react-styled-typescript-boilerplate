@@ -66,6 +66,7 @@
     "@typescript-eslint/eslint-plugin": "4.1.1",
     "@typescript-eslint/parser": "4.1.1",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.3.2",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
     "react-snap": "^1.23.0",
