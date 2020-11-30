@@ -6,6 +6,9 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const dotenv = require('dotenv');
+const CopyPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // eslint-disable-next-line
 module.exports = (env, argv) => {
@@ -87,6 +90,24 @@ module.exports = (env, argv) => {
       publicPath: '/',
     },
     plugins: [
+      new CleanWebpackPlugin(),
+      new BundleAnalyzerPlugin(),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: 'public',
+            filter: async (resourcePath) => {
+              if (resourcePath.toString().includes('index.pug')) {
+                return false;
+              }
+              // }
+
+              return true;
+            },
+            force: true,
+          },
+        ],
+      }),
       new webpack.DefinePlugin(stringifiedENV),
       new CompressionWebpackPlugin({
         test: new RegExp(`\\.(${['js', 'ts', 'css', 'pcss', 'html'].join('|')})$`),
@@ -102,6 +123,7 @@ module.exports = (env, argv) => {
       new HtmlWebpackPugPlugin(),
     ],
     optimization: {
+      usedExports: true,
       splitChunks: {
         cacheGroups: {
           commons: {
