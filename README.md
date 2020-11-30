@@ -5,28 +5,28 @@
 ![style](https://img.shields.io/badge/Style-styled--components-yellow)
 A React boilerplate for styled-components and TypeScript.
 
-## Features
+## 💡 Features
 
-- react-snap: hydrates components for SEO.
+- **react-snap**: hydrates components for SEO.
 
 > Pre-renders a web app into static HTML. Uses Headless Chrome to crawl all available links starting from the root. Enables SEO (Google, DuckDuckGo...) and SMO (Twitter, Facebook...) for SPAs. [🔗 react-snap docs](https://github.com/stereobooster/react-snap)
 
-- dotenv support: able to use `.env` file to handle environment variables with webpack.
+- **dotenv support**: able to use `.env` file to handle environment variables with webpack.
 
-- webpack-dev-server included.
-- TypeScript supprt: uses TypeScript for all components and configurations.
-- styled-components: basic configurations included. Ready to use.
-- API handler: Ready to use API handler included.
-- GitHub action: Lint, Test, Build available.
-- ESLint: configurated eslint included.
+- **webpack-dev-server** included.
+- **TypeScript Supprt**: uses TypeScript for all components and configurations.
+- **styled-components**: basic configurations included. Ready to use.
+- **API handler**: Ready to use API handler included.
+- **GitHub action**: Lint, Test, Build available.
+- **ESLint**: configurated eslint included.
 
-## Installation
+## 🎁 Installation
 
 ```
 npm i
 ```
 
-## Run
+## 🏃‍♂️ Run
 
 Running webpack-dev-server, with `webpack mode=development`. HMR(Hot Module Replacement) supported.
 
@@ -34,7 +34,7 @@ Running webpack-dev-server, with `webpack mode=development`. HMR(Hot Module Repl
 npm run start
 ```
 
-## Build
+## 🏗 Build
 
 Builds React project in `/build` directory.
 
