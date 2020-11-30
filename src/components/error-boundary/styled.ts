@@ -15,7 +15,7 @@ export const ErrorText = styled.p`
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
   font-weight: bold;
-`
+`;
 
 export const RetryButton = styled.div`
   width: 100px;
@@ -31,4 +31,4 @@ export const RetryButton = styled.div`
   &:active {
     background-color: rgba(255, 0, 0, 0.7);
   }
-`
+`;

@@ -23,7 +23,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   render() {
     if (this.state.errorInfo) {
-      return <ErrorView onRetry={() => location.reload()} />;
+      return <ErrorView onRetry={ () => location.reload() } />;
     }
 
     return this.props.children;
