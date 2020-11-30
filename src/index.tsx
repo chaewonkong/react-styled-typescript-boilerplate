@@ -1,15 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate, render } from 'react-dom';
 
 import { GlobalStyles } from '@/GlobalStyles';
-import { EntryRoute } from '@/routes'
+import { EntryRoute } from '@/routes';
 
-const MockRoute = () => <div>hi</div>;
-
-ReactDOM.render(
-  <React.StrictMode>
-    <GlobalStyles />
-    <EntryRoute />
-  </React.StrictMode>,
-  document.getElementById('wrap'),
-);
+const rootElement = document.getElementById('wrap');
+if (rootElement?.hasChildNodes()) {
+  hydrate((
+    <React.Fragment>
+      <GlobalStyles />
+      <EntryRoute />
+    </React.Fragment>
+  ), rootElement);
+} else {
+  render((
+    <React.Fragment>
+      <GlobalStyles />
+      <EntryRoute />
+    </React.Fragment>
+  ), rootElement);
+}

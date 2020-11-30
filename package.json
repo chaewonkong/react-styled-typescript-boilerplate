@@ -8,7 +8,8 @@
     "build": "webpack --mode=production",
     "lint": "eslint src --ext ts --ext tsx",
     "lint:fix": "eslint src --ext ts --ext tsx --fix",
-    "start": "webpack --mode=development && webpack-dev-server"
+    "start": "webpack --mode=development && webpack-dev-server",
+    "postbuild": "react-snap"
   },
   "keywords": [
     "react",
@@ -67,6 +68,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
+    "react-snap": "^1.23.0",
     "webpack-dev-server": "3.11.0"
   }
 }
