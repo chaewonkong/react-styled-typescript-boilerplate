@@ -7,8 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const dotenv = require('dotenv');
 const CopyPlugin = require('copy-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // eslint-disable-next-line
 module.exports = (env, argv) => {
@@ -91,7 +91,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new CleanWebpackPlugin(),
-      new BundleAnalyzerPlugin(),
+      // new BundleAnalyzerPlugin(),
       new CopyPlugin({
         patterns: [
           {
@@ -100,7 +100,6 @@ module.exports = (env, argv) => {
               if (resourcePath.toString().includes('index.pug')) {
                 return false;
               }
-              // }
 
               return true;
             },
@@ -124,6 +123,7 @@ module.exports = (env, argv) => {
     ],
     optimization: {
       usedExports: true,
+      minimize: true,
       splitChunks: {
         cacheGroups: {
           commons: {
