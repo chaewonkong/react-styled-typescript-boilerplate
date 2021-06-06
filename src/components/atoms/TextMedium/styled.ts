@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-interface TextMediumProps {
-  color: string;
-}
+import { TextProps } from '@/interfaces';
 
-export const TextMedium = styled.p<TextMediumProps>`
+export const TextMedium = styled.p<Partial<TextProps>>`
 font-style: normal;
 font-weight: normal;
 font-size: 18px;

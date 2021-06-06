@@ -1,19 +1,15 @@
 import React from 'react';
 
 import { COLORS } from '@/constants';
+import { TextProps } from '@/interfaces';
 
 import * as S from './styled';
 
-interface TitleMediumProps {
-  color?: string;
-  title: string;
-}
-
 const TitleMedium = ({
   color = COLORS.BASIC_BLACK,
-  title,
-}: TitleMediumProps) => (
-  <S.TitleMedium color={ color }>{ title }</S.TitleMedium>
+  text,
+}: TextProps) => (
+  <S.TitleMedium color={ color }>{ text }</S.TitleMedium>
 );
 
 export default TitleMedium;

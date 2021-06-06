@@ -1,18 +1,14 @@
 import React from 'react';
 
 import { COLORS } from '@/constants';
+import { TextProps } from '@/interfaces';
 
 import * as S from './styled';
-
-interface TextMediumProps {
-  text: string;
-  color?: string;
-}
 
 const TextMedium = ({
   text,
   color = COLORS.BASIC_BLACK,
-} :TextMediumProps) => (
+} :TextProps) => (
   <S.TextMedium color={ color }>{ text }</S.TextMedium>
 );
 

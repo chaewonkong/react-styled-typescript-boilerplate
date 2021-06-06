@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-interface TitleMediumProps {
-  color: string;
-}
+import { TextProps } from '@/interfaces';
 
-export const TitleMedium = styled.h2<TitleMediumProps>`
+export const TitleMedium = styled.h2<Partial<TextProps>>`
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
