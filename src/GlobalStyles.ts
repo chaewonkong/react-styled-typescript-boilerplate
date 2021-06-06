@@ -8,6 +8,8 @@ export const GlobalStyles = createGlobalStyle`
     }
     body{
         background-color: #ffffff;
+        font-family: Noto Sans KR;
+        color: #2F2F2F;
     }
     a {
         text-decoration: none;
