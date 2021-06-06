@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { COLORS } from '@/constants';
+
 import * as S from './styled';
 
 interface TextMediumProps {
@@ -9,7 +11,7 @@ interface TextMediumProps {
 
 const TextMedium = ({
   text,
-  color = '#2f2f2f',
+  color = COLORS.BASIC_BLACK,
 } :TextMediumProps) => (
   <S.TextMedium color={ color }>{ text }</S.TextMedium>
 );
