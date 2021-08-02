@@ -1,32 +1,31 @@
-const webpack = require('webpack');
-const join = require('path').join;
+const webpack = require("webpack");
+const join = require("path").join;
 
-const pathJoin = path => join(__dirname, path);
-const CompressionWebpackPlugin = require('compression-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
-const dotenv = require('dotenv');
-const CopyPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const pathJoin = (path) => join(__dirname, path);
+const CompressionWebpackPlugin = require("compression-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPugPlugin = require("html-webpack-pug-plugin");
+const dotenv = require("dotenv");
+const CopyPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // eslint-disable-next-line
 module.exports = (env, argv) => {
-  require('dotenv-expand')((dotenv.config()));
-  const raw = Object.keys(process.env)
-    .reduce(
-      (env, key) => {
-        env[key] = process.env[key];
+  require("dotenv-expand")(dotenv.config());
+  const raw = Object.keys(process.env).reduce(
+    (env, key) => {
+      env[key] = process.env[key];
 
-        return env;
-      },
-      {
-        NODE_ENV: process.env.NODE_ENV || 'development',
-      },
-    );
+      return env;
+    },
+    {
+      NODE_ENV: process.env.NODE_ENV || "development",
+    }
+  );
 
   const stringifiedENV = {
-    'process.env': Object.keys(raw).reduce((env, key) => {
+    "process.env": Object.keys(raw).reduce((env, key) => {
       env[key] = JSON.stringify(raw[key]);
 
       return env;
@@ -35,17 +34,17 @@ module.exports = (env, argv) => {
 
   const TIMESTAMP = new Date().getTime().toString();
 
-  return ({
-    entry: pathJoin('src/index.tsx'),
+  return {
+    entry: pathJoin("src/index.tsx"),
     resolve: {
       alias: {
-        '@': pathJoin('src'),
+        "@": pathJoin("src"),
       },
-      extensions: ['.ts', '.tsx', '.js', '.json'],
+      extensions: [".ts", ".tsx", ".js", ".json"],
     },
     devServer: {
       port: 3000,
-      contentBase: pathJoin('build'),
+      contentBase: pathJoin("build"),
       hot: true,
       historyApiFallback: true,
     },
@@ -53,30 +52,30 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.pug$/,
-          include: pathJoin('public'),
-          loaders: ['pug-loader'],
+          include: pathJoin("public"),
+          loaders: ["pug-loader"],
         },
         {
-          test: /\.(ts|tsx|js)?$/,
+          test: /\.(ts|tsx)?$/,
           exclude: /(node_modules|__test__)/,
           use: [
             {
-              loader: 'babel-loader',
+              loader: "ts-loader",
             },
           ],
         },
         {
           test: /\.(png|jpe?g|gif)$/i,
-          use: ['file-loader'],
+          use: ["file-loader"],
         },
         {
           test: /\.svg$/,
           use: [
             {
-              loader: 'url-loader',
+              loader: "url-loader",
               options: {
                 limit: 8192,
-                name: '[name].[ext]',
+                name: "[name].[ext]",
               },
             },
           ],
@@ -86,8 +85,8 @@ module.exports = (env, argv) => {
     output: {
       filename: `[name].${TIMESTAMP}.bundle.js`,
       chunkFilename: `[name].${TIMESTAMP}.bundle.js`,
-      path: pathJoin('build'),
-      publicPath: '/',
+      path: pathJoin("build"),
+      publicPath: "/",
     },
     plugins: [
       new CleanWebpackPlugin(),
@@ -95,9 +94,9 @@ module.exports = (env, argv) => {
       new CopyPlugin({
         patterns: [
           {
-            from: 'public',
+            from: "public",
             filter: async (resourcePath) => {
-              if (resourcePath.toString().includes('index.pug')) {
+              if (resourcePath.toString().includes("index.pug")) {
                 return false;
               }
 
@@ -109,15 +108,17 @@ module.exports = (env, argv) => {
       }),
       new webpack.DefinePlugin(stringifiedENV),
       new CompressionWebpackPlugin({
-        test: new RegExp(`\\.(${['js', 'ts', 'css', 'pcss', 'html'].join('|')})$`),
-        filename: '[path].gz[query]',
-        algorithm: 'gzip',
+        test: new RegExp(
+          `\\.(${["js", "ts", "css", "pcss", "html"].join("|")})$`
+        ),
+        filename: "[path].gz[query]",
+        algorithm: "gzip",
         threshold: 8192,
         cache: true,
       }),
       new HtmlWebpackPlugin({
-        template: pathJoin('public/index.pug'),
-        filename: 'index.html',
+        template: pathJoin("public/index.pug"),
+        filename: "index.html",
       }),
       new HtmlWebpackPugPlugin(),
     ],
@@ -128,11 +129,11 @@ module.exports = (env, argv) => {
         cacheGroups: {
           commons: {
             test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'initial',
+            name: "vendors",
+            chunks: "initial",
           },
         },
       },
     },
-  });
+  };
 };

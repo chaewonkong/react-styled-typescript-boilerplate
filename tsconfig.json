@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
+    "sourceMap": true,
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
     "allowJs": true,
-    "noEmit": true,
+    "noEmit": false,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strict": true,
@@ -15,13 +16,8 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "types": [
-      "@types/jest",
-      "@types/node"
-    ]
+    "types": ["@types/jest", "node"]
   }
 }
